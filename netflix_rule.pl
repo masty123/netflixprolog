@@ -1,3 +1,17 @@
+:- load_files(netflix_facts,[]).
+
+:- dynamic 
+    mateage/2, 
+    releaseYear/1, 
+    matage/1, 
+    type/1, 
+    isFrom/1,
+    director/2,
+    similarfamilyshow/2,
+    actor/3.
+:- discontiguous actor/3.
+:- style_check(-singleton).
+
 %member:
 %theeruth   borisuth        5910545701
 %phanuwatch luangpradit     5910545779
@@ -16,105 +30,114 @@
 
 % Kid-friendly media?
 % Classic_media?
-% Latest movies in Netflix?
+% Latest medias in Netflix?
 % An anime or not?
 % Similar media with the same age restriction?
 % Director that directed a movie that this specific actor appear
 % An co-stars of a specific director in a specific movie.  
 % Director that direct movie for mature audiance
-% actors in classic a media.
-% co-star in a movie?
-% Specific mature  movies with specific type that release in a specific year.
+% actors in a classic media.
+% Specific mature movies with specific type that release in a specific year.
 % Director that used to direct a classic media.
    
-:- load_files(netflix_facts,[]).
-
-:- dynamic 
-    mateage/2, 
-    releaseYear/1, 
-    matage/1, 
-    type/1, 
-    isFrom/1,
-    director/2,
-    actor/3.
-:- discontiguous actor/3.
-:- style_check(-singleton).
- 
 % rules:_converted_into_code
+
 % Is this media a classic?
-isclassic(X) :-
-    releaseYear(X, Y),
-    Y=<2000.
+isclassic(MEDIA) :-
+    releaseYear(MEDIA, YEAR),
+    YEAR=<2000,
+    nl.
 
 % Can kid watch this media?
-kidmedia(X) :-
-    matage(X, Y),
-    Y=<13.
+kidmedia(MEDIA) :-
+    matage(MEDIA, AGE),
+    AGE=<13,
+    nl.
 
 % A media for mature audience only
-maturemedia(X) :-
-    matage(X, Y),
-    Y>=18.
+maturemedia(MEDIA) :-
+    matage(MEDIA, AGE),
+    AGE>=18,
+    nl.
 
 % Is this media an anime?
-isanime(X) :-
-    type(X, Z),
-    Z==animation,
-    isfrom(X, Y),
-    Y==japan.
+isanime(ANIME) :-
+    type(ANIME, TYPE),
+    TYPE==animation,
+    isfrom(ANIME, LOCATION),
+    LOCATION==japan,
+    nl.
 
 % Similar family show
-similarfamilyshow(W, V) :-
-    kidmedia(W),
-    kidmedia(V),
-    type(W, X),
-    type(V, X),
-    W\=V.
+similarfamilyshow(MEDIA_X, MEDIA_Y) :-
+    kidmedia(MEDIA_X),
+    kidmedia(MEDIA_Y),
+    type(MEDIA_X, TYPE_A),
+    type(MEDIA_Y, TYPE_A),
+    MEDIA_X\=MEDIA_Y,
+    nl.
 
 % Similar show for mature audiences
-similarmatureshow(W, V) :-
-    maturemedia(W),
-    maturemedia(V),
-    type(W, X),
-    type(V, X),
-    W\=V.
+similarmatureshow(MEDIA_X, MEDIA_Y) :-
+    maturemedia(MEDIA_X),
+    maturemedia(MEDIA_Y),
+    type(MEDIA_X, TYPE),
+    type(MEDIA_Y, TYPE),
+    MEDIA_X\=MEDIA_Y,
+    nl.
 
 % Director that direct media for mature audience
-maturedirector(V,W) :-
-    maturemedia(V),
-    director(V,W).
+maturedirector(MEDIA,DIRECTOR) :-
+    maturemedia(MEDIA),
+    director(MEDIA,DIRECTOR),
+    nl.
 
 % Director that directed a movie that this specific actor appear
-moviedirectorwithactor(D,A) :-
-    director(M,D),
-    actor(M, A, X).
+moviedirectorwithactor(DIRECTOR,ACTOR,MOVIE) :-
+    director(MOVIE,DIRECTOR),
+    actor(MOVIE, ACTOR, ROLE),
+    nl.
 
-% Co-star of an actor in this movie. X = costar #1, Y = costar #2, Z = Movies
-costar(X,Y,Z) :-
-    actor(Z,X,C),
-    actor(Z,Y,D),
-    X \= Y.
+% Co-star of an actor in this movie. 
+costar(ACTOR_1,ACTOR_2,MEDIA) :-
+    actor(MEDIA,ACTOR_1,ROLE_1),
+    actor(MEDIA,ACTOR_2,ROLE_2),
+    ACTOR_1 \= ACTOR_2,
+    nl.
 
 % Actor in a classic media.
-actorinclassicmedia(X,Y) :-
-    isclassic(Y),
-    actor(Y, X, C).
+actorinclassicmedia(ACTOR,MOVIE) :-
+    isclassic(MOVIE),
+    actor(MOVIE, ACTOR, ROLE),
+    nl.
 
 % Specific medias with specific type that release in a specific year.
-maturetypemovieinYear(M,T,Y) :-
-    type(M,T),
-    maturemedia(X),
-    releaseYear(M,Y).
+maturetypemovieinYear(MEDIA,TYPE,YEAR) :-
+    type(MEDIA,TYPE),
+    maturemedia(MEDIA),
+    releaseYear(MEDIA,YEAR).
     
 % New movie/series that came out this year.
-newmedia(X) :-
-    releaseYear(X, Y),
-    Y==2020.
+newmedia(MEDIA) :-
+    releaseYear(MEDIA, YEAR),
+    YEAR==2020,
+    nl.
 
 % Director that used to direct a classic movie.
-classicdirector(X,Y) :-
-    isclassic(Y),
-    director(Y,X).
+classicdirector(DIRECTOR,MEDIA) :-
+    isclassic(MEDIA),
+    director(MEDIA,DIRECTOR),
+    nl.
+
+% Similar Director that direct a mature and classic media.
+similarclassicmaturedirector(DIRECTOR, MEDIA_Y) :-
+    similarmatureshow(MEDIA_X, MEDIA_Y),
+    isclassic(MEDIA_X),
+    director(MEDIA_X,DIRECTOR),
+    nl.
+    
+    
+  
 
 
 
