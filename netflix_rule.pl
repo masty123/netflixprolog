@@ -89,10 +89,10 @@ moviedirectorwithactor(D,A) :-
     director(M,D),
     actor(M, A, X).
 
-% Co-star of an actor in this movie.
-costar(X,Y) :-
-    actor(W,X,C),
-    actor(W,Y,D),
+% Co-star of an actor in this movie. X = costar #1, Y = costar #2, Z = Movies
+costar(X,Y,Z) :-
+    actor(Z,X,C),
+    actor(Z,Y,D),
     X \= Y.
 
 % Actor in a classic media.
