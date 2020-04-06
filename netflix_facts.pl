@@ -42,6 +42,7 @@ series(stranger_things).
 series(the_Witcher).
 series(pokemon_sun_and_moon).
 series(ben10).
+series(jojo_bizarre_adventure).
 
 
 releaseYear(uncut_Gems, 2020).
@@ -62,6 +63,7 @@ releaseYear(stranger_things, 2019).
 releaseYear(the_Witcher, 2019).
 releaseYear(pokemon_sun_and_moon, 2019).
 releaseYear(ben10, 2005).
+releaseyear(jojo_bizarre_adventure, 2012).
 
 matage(deadpool, 18).
 matage(jumanji, 13).
@@ -81,6 +83,7 @@ matage(uncut_Gems, 18).
 matage(back_to_the_future, 10).
 matage(ready_player_One, 12).
 matage(ben10, 6).
+matage(jojo_bizarre_adventure, 18).
 
 type(deadpool, action).
 type(deadpool, comedy).
@@ -117,6 +120,8 @@ type(ready_player_One, fantasy).
 type(uncut_Gems, action).
 type(ben10, teen).
 type(ben10, animation).
+type(jojo_bizarre_adventure, animation).
+type(jojo_bizarre_adventure, action).
 
 isfrom(frozen, usa).
 isfrom(marriage_story, usa).
@@ -136,6 +141,7 @@ isfrom(deadpool, usa).
 isfrom(jumanji, usa).
 isfrom(uncut_Gems, usa).
 isfrom(ben10, usa).
+isfrom(jojo_bizarre_adventure, japan).
 
 director(frozen, jennifer_lee).
 director(marriage_story, noah_baumbach).
@@ -155,6 +161,7 @@ director(deadpool, tim_miller).
 director(jumanji, jake_kasdan).
 director(uncut_Gems, josh_safdie).
 director(ben10, matt_youngberg).
+director(jojo_bizarre_adventure, naokatsu_tsuda).
 
 
 actor(frozen,idina_menzel, elsa).
@@ -199,6 +206,10 @@ actor(uncut_Gems, adam_sandler, howard_ratner).
 actor(ben10, tara_strong, ben_tennyson).
 actor(ben10, megan_moore, gwen_tennyson).
 actor(ben10, paul_eiding, max_tennyson).
+actor(jojo_bizarre_adventure, jotaro_kujo, daisuke_ono).
+actor(jojo_bizarre_adventure, joseph_joestar, unsho_ishizuka).
+actor(jojo_bizarre_adventure, giorno_giovanna, kensho_ono).
+actor(jojo_bizarre_adventure, fuminori_komatsu, jean_pierre_polnareff).
 
 
 
