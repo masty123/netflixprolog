@@ -1,25 +1,3 @@
-%_member:
-%_theeruth_borisuth_5910545701
-%_phanuwatch_luangpradit_5910545779
-%_patiphan_srisook_5910546422
-%_tetach_rattanavikran_6110545554
-%_punyawee_srithongkerd_6110545571
-
-% topic:_Watching_Netflix
-
-%_source_reference:
-
-%_Netflix.com
-%_https://www.wired.co.uk/article/best-shows-netflix
-%_https://www.radiotimes.com/news/on-demand/2020-02-11/netflix-best-movies/?
-
-%_competency_Question:
-
-%_classic_Kid-friendly_media?
-%_classic_romance_media?
-%_Which_latest_action_movies_to_watch_on_Netflix?
-%_are_there_any_anime_with_sci-fi_theme_to_watch_on_Netflix?
-%_media_that_are_similar_to_deadpool?
 :- use_module(netflix_facts,[]).
 % facts:
 
@@ -35,7 +13,7 @@ movie(the_thing).
 movie(back_to_the_future).
 movie(ready_player_One).
 
-series(sex_Education).
+series(ex_Education).
 series(locke_and_Key).
 series(prison_break).
 series(stranger_things).
