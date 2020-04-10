@@ -147,7 +147,7 @@ actor(frozen, kristen_bell, anna).
 actor(frozen, josh_gad, olaf).
 actor(marriage_story, adam_driver, charlie).
 actor(marriage_story, scarlett_johansson, nicole).
-actor(the_End_of_Evangelion, megumi_ogata, shiniji).
+actor(the_End_of_Evangelion, megumi_ogata, shinji).
 actor(the_End_of_Evangelion, megumi_hayashibara, rei_ayanami).
 actor(the_End_of_Evangelion, yuko_miyamura, asuka_langley).
 actor(titanic, kate_winslet, rose_dewitt).
