@@ -92,13 +92,13 @@ maturedirector(MEDIA,DIRECTOR) :-
     director(MEDIA,DIRECTOR),
     nl.
 
-% Director that directed a movie that this specific actor appear
-moviedirectorwithactor(DIRECTOR,ACTOR,MOVIE) :-
-    director(MOVIE,DIRECTOR),
-    actor(MOVIE, ACTOR, ROLE),
+% Director that directed a media that this specific actor appear
+mediadirectorwithactor(DIRECTOR,ACTOR,MEDIA) :-
+    director(MEDIA,DIRECTOR),
+    actor(MEDIA, ACTOR, ROLE),
     nl.
 
-% Co-star of an actor in this movie. 
+% Co-star of an actor in this media. 
 costar(ACTOR_1,ACTOR_2,MEDIA) :-
     actor(MEDIA,ACTOR_1,ROLE_1),
     actor(MEDIA,ACTOR_2,ROLE_2),
@@ -106,13 +106,13 @@ costar(ACTOR_1,ACTOR_2,MEDIA) :-
     nl.
 
 % Actor in a classic media.
-actorinclassicmedia(ACTOR,MOVIE) :-
-    isclassic(MOVIE),
-    actor(MOVIE, ACTOR, ROLE),
+actorinclassicmedia(ACTOR,MEDIA) :-
+    isclassic(MEDIA),
+    actor(MEDIA, ACTOR, ROLE),
     nl.
 
 % Specific medias with specific type that release in a specific year.
-maturetypemovieinYear(MEDIA,TYPE,YEAR) :-
+maturetypemediainYear(MEDIA,TYPE,YEAR) :-
     type(MEDIA,TYPE),
     maturemedia(MEDIA),
     releaseYear(MEDIA,YEAR).
@@ -123,7 +123,7 @@ newmedia(MEDIA) :-
     YEAR==2020,
     nl.
 
-% Director that used to direct a classic movie.
+% Director that used to direct a classic media.
 classicdirector(DIRECTOR,MEDIA) :-
     isclassic(MEDIA),
     director(MEDIA,DIRECTOR),

@@ -1,26 +1,26 @@
 :- use_module(netflix_facts,[]).
 % facts:
 
-movie(deadpool).
-movie(titanic).
-movie(the_End_of_Evangelion).
-movie(jumanji).
-movie(marriage_story).
-movie(frozen).
-movie(charlie_and_the_chocolate_factory).
-movie(uncut_Gems).
-movie(the_thing).
-movie(back_to_the_future).
-movie(ready_player_One).
+media(deadpool).
+media(titanic).
+media(the_End_of_Evangelion).
+media(jumanji).
+media(marriage_story).
+media(frozen).
+media(charlie_and_the_chocolate_factory).
+media(uncut_Gems).
+media(the_thing).
+media(back_to_the_future).
+media(ready_player_One).
 
-series(ex_Education).
-series(locke_and_Key).
-series(prison_break).
-series(stranger_things).
-series(the_Witcher).
-series(pokemon_sun_and_moon).
-series(ben10).
-series(jojo_bizarre_adventure).
+media(ex_Education).
+media(locke_and_Key).
+media(prison_break).
+media(stranger_things).
+media(the_Witcher).
+media(pokemon_sun_and_moon).
+media(ben10).
+media(jojo_bizarre_adventure).
 
 
 releaseYear(uncut_Gems, 2020).
