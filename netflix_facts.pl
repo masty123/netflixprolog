@@ -24,6 +24,7 @@ media(the_Witcher).
 media(pokemon_sun_and_moon).
 media(ben10).
 media(jojo_bizarre_adventure).
+media(tiger_king).
 
 
 releaseYear(uncut_Gems, 2020).
@@ -44,7 +45,8 @@ releaseYear(stranger_things, 2019).
 releaseYear(the_Witcher, 2019).
 releaseYear(pokemon_sun_and_moon, 2019).
 releaseYear(ben10, 2005).
-releaseyear(jojo_bizarre_adventure, 2012).
+releaseYear(jojo_bizarre_adventure, 2012).
+releaseYear(tiger_king, 2020).
 
 matage(deadpool, 18).
 matage(jumanji, 13).
@@ -65,6 +67,7 @@ matage(back_to_the_future, 10).
 matage(ready_player_One, 12).
 matage(ben10, 6).
 matage(jojo_bizarre_adventure, 18).
+matage(tiger_king, 18).
 
 type(deadpool, action).
 type(deadpool, comedy).
@@ -103,6 +106,7 @@ type(ben10, teen).
 type(ben10, animation).
 type(jojo_bizarre_adventure, animation).
 type(jojo_bizarre_adventure, action).
+type(tiger_king, documentary).
 
 isfrom(frozen, usa).
 isfrom(marriage_story, usa).
@@ -123,6 +127,7 @@ isfrom(jumanji, usa).
 isfrom(uncut_Gems, usa).
 isfrom(ben10, usa).
 isfrom(jojo_bizarre_adventure, japan).
+isfrom(tiger_king, usa).
 
 director(frozen, jennifer_lee).
 director(marriage_story, noah_baumbach).
@@ -143,6 +148,7 @@ director(jumanji, jake_kasdan).
 director(uncut_Gems, josh_safdie).
 director(ben10, matt_youngberg).
 director(jojo_bizarre_adventure, naokatsu_tsuda).
+director(tiger_king, eric_goode).
 
 
 actor(frozen,idina_menzel, elsa).
@@ -191,6 +197,9 @@ actor(jojo_bizarre_adventure, jotaro_kujo, daisuke_ono).
 actor(jojo_bizarre_adventure, joseph_joestar, unsho_ishizuka).
 actor(jojo_bizarre_adventure, giorno_giovanna, kensho_ono).
 actor(jojo_bizarre_adventure, fuminori_komatsu, jean_pierre_polnareff).
+actor(tiger_king, carole_baskin, carole_baskin).
+actor(tiger_king, joe_exotic, joe_exotic).
+actor(tiger_king, eric_goode, eric_goode).
 
 
 

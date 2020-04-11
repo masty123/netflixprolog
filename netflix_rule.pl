@@ -125,8 +125,7 @@ maturetypemediainYear(MEDIA,TYPE,YEAR) :-
 % New movie/series that came out this year.
 newmedia(MEDIA) :-
     releaseYear(MEDIA, YEAR),
-    YEAR==2020,
-    nl.
+    YEAR==2020.
 
 % Director that used to direct a classic media.
 classicdirector(DIRECTOR,MEDIA) :-
