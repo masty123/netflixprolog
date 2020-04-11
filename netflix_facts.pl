@@ -1,6 +1,8 @@
 :- use_module(netflix_facts,[]).
+
 % facts:
 
+% movies
 media(deadpool).
 media(titanic).
 media(the_End_of_Evangelion).
@@ -13,6 +15,7 @@ media(the_thing).
 media(back_to_the_future).
 media(ready_player_One).
 
+% series
 media(ex_Education).
 media(locke_and_Key).
 media(prison_break).
@@ -72,7 +75,7 @@ type(marriage_story, drama).
 type(the_End_of_Evangelion, action).
 type(the_End_of_Evangelion, fantasy).
 type(the_End_of_Evangelion, animation).
-type(the_End_of_Evangelion, sci-fI).
+type(the_End_of_Evangelion, sci-fi).
 type(titanic, romance).
 type(titanic, drama).
 type(sex_Education, teen).

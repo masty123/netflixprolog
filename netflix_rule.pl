@@ -45,28 +45,24 @@
 % Is this media a classic?
 isclassic(MEDIA) :-
     releaseYear(MEDIA, YEAR),
-    YEAR=<2000,
-    nl.
+    YEAR=<2000.
 
 % Can kid watch this media?
 kidmedia(MEDIA) :-
     matage(MEDIA, AGE),
-    AGE=<13,
-    nl.
+    AGE=<13.
 
 % A media for mature audience only
 maturemedia(MEDIA) :-
     matage(MEDIA, AGE),
-    AGE>=18,
-    nl.
+    AGE>=18.
 
 % Is this media an anime?
 isanime(ANIME) :-
     type(ANIME, TYPE),
     TYPE==animation,
     isfrom(ANIME, LOCATION),
-    LOCATION==japan,
-    nl.
+    LOCATION==japan.
 
 % Similar family show
 similarfamilyshow(MEDIA_X, MEDIA_Y) :-
@@ -75,6 +71,8 @@ similarfamilyshow(MEDIA_X, MEDIA_Y) :-
     type(MEDIA_X, TYPE_A),
     type(MEDIA_Y, TYPE_A),
     MEDIA_X\=MEDIA_Y,
+    nl,
+    print(type: TYPE_A),
     nl.
 
 % Similar show for mature audiences
@@ -84,6 +82,8 @@ similarmatureshow(MEDIA_X, MEDIA_Y) :-
     type(MEDIA_X, TYPE),
     type(MEDIA_Y, TYPE),
     MEDIA_X\=MEDIA_Y,
+    nl,
+    print(type: TYPE),
     nl.
 
 % Director that direct media for mature audience
@@ -93,16 +93,20 @@ maturedirector(MEDIA,DIRECTOR) :-
     nl.
 
 % Director that directed a media that this specific actor appear
-mediadirectorwithactor(DIRECTOR,ACTOR,MEDIA) :-
+mediadirectorwithactor(DIRECTOR,ACTOR) :-
     director(MEDIA,DIRECTOR),
     actor(MEDIA, ACTOR, ROLE),
+    nl,
+    print(media: MEDIA),
     nl.
 
 % Co-star of an actor in this media. 
-costar(ACTOR_1,ACTOR_2,MEDIA) :-
+costar(ACTOR_1,ACTOR_2) :-
     actor(MEDIA,ACTOR_1,ROLE_1),
     actor(MEDIA,ACTOR_2,ROLE_2),
     ACTOR_1 \= ACTOR_2,
+    nl,
+    print(media: MEDIA),
     nl.
 
 % Actor in a classic media.
@@ -115,7 +119,8 @@ actorinclassicmedia(ACTOR,MEDIA) :-
 maturetypemediainYear(MEDIA,TYPE,YEAR) :-
     type(MEDIA,TYPE),
     maturemedia(MEDIA),
-    releaseYear(MEDIA,YEAR).
+    releaseYear(MEDIA,YEAR),
+    nl.
     
 % New movie/series that came out this year.
 newmedia(MEDIA) :-
@@ -129,15 +134,16 @@ classicdirector(DIRECTOR,MEDIA) :-
     director(MEDIA,DIRECTOR),
     nl.
 
-% Similar Director that direct a mature and classic media.
-similarclassicmaturedirector(DIRECTOR, MEDIA_Y) :-
-    similarmatureshow(MEDIA_X, MEDIA_Y),
-    isclassic(MEDIA_X),
-    director(MEDIA_X,DIRECTOR),
-    nl.
+% % EXPERIMENTAL
+% % Similar Director that direct a mature and classic media.
+% similarclassicmaturedirector(DIRECTOR_X, DIRECTOR_Y) :-
+%     director(MEDIA_Y,DIRECTOR_Y),
+%     director(MEDIA_X,DIRECTOR_X),
+%     isclassic(MEDIA_Y),
+%     isclassic(MEDIA_X),
+%     nl.
     
     
   
-
 
 
