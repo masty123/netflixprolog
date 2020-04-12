@@ -25,6 +25,7 @@ media(pokemon_sun_and_moon).
 media(ben10).
 media(jojo_bizarre_adventure).
 media(tiger_king).
+media(altered_carbon).
 
 
 releaseYear(uncut_Gems, 2020).
@@ -47,6 +48,7 @@ releaseYear(pokemon_sun_and_moon, 2019).
 releaseYear(ben10, 2005).
 releaseYear(jojo_bizarre_adventure, 2012).
 releaseYear(tiger_king, 2020).
+releaseYear(altered_carbon, 2018).
 
 matage(deadpool, 18).
 matage(jumanji, 13).
@@ -68,6 +70,7 @@ matage(ready_player_One, 12).
 matage(ben10, 6).
 matage(jojo_bizarre_adventure, 18).
 matage(tiger_king, 18).
+matage(altered_carbon, 18).
 
 type(deadpool, action).
 type(deadpool, comedy).
@@ -107,6 +110,9 @@ type(ben10, animation).
 type(jojo_bizarre_adventure, animation).
 type(jojo_bizarre_adventure, action).
 type(tiger_king, documentary).
+type(altered_carbon, sci-fi).
+type(altered_carbon, action).
+
 
 isfrom(frozen, usa).
 isfrom(marriage_story, usa).
@@ -128,6 +134,7 @@ isfrom(uncut_Gems, usa).
 isfrom(ben10, usa).
 isfrom(jojo_bizarre_adventure, japan).
 isfrom(tiger_king, usa).
+isfrom(altered_carbon, usa).
 
 director(frozen, jennifer_lee).
 director(marriage_story, noah_baumbach).
@@ -149,6 +156,7 @@ director(uncut_Gems, josh_safdie).
 director(ben10, matt_youngberg).
 director(jojo_bizarre_adventure, naokatsu_tsuda).
 director(tiger_king, eric_goode).
+director(altered_carbon, miguel_sapochnik).
 
 
 actor(frozen,idina_menzel, elsa).
@@ -200,6 +208,9 @@ actor(jojo_bizarre_adventure, fuminori_komatsu, jean_pierre_polnareff).
 actor(tiger_king, carole_baskin, carole_baskin).
 actor(tiger_king, joe_exotic, joe_exotic).
 actor(tiger_king, eric_goode, eric_goode).
+actor(altered_carbon, joel_kinnaman, takeshi_kovacs).
+actor(altered_carbon, martha_higareda, kristen_ortega).
+actor(altered_carbon, chris_conner, poe).
 
 
 
