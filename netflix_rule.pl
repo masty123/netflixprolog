@@ -1,5 +1,6 @@
 :- load_files(netflix_facts,[]).
 
+% for ignore warning
 :- dynamic 
     mateage/2, 
     releaseYear/1, 
@@ -39,36 +40,37 @@
 % actors in a classic media.
 % Specific mature movies with specific type that release in a specific year.
 % Director that used to direct a classic media.
-   
+
+
 % rules:_converted_into_code
 
 % Is this media a classic?
-isclassic(MEDIA) :-
+isClassic(MEDIA) :-
     releaseYear(MEDIA, YEAR),
     YEAR=<2000.
     % print(year: YEAR).
 
 % Can kid watch this media?
-kidmedia(MEDIA) :-
+kidMedia(MEDIA) :-
     matage(MEDIA, AGE),
     AGE=<13.
     % print(age: AGE).
 
 % A media for mature audience only
-maturemedia(MEDIA) :-
+matureMedia(MEDIA) :-
     matage(MEDIA, AGE),
     AGE>=18.
     % print(age: AGE).
 
 % Is this media an anime?
-isanime(ANIME) :-
+isAnime(ANIME) :-
     type(ANIME, TYPE),
     TYPE==animation,
     isfrom(ANIME, LOCATION),
     LOCATION==japan.
 
 % Similar family show
-similarfamilyshow(MEDIA_X, MEDIA_Y) :-
+similarFamilyShow(MEDIA_X, MEDIA_Y) :-
     kidmedia(MEDIA_X),
     kidmedia(MEDIA_Y),
     type(MEDIA_X, TYPE_A),
@@ -79,7 +81,7 @@ similarfamilyshow(MEDIA_X, MEDIA_Y) :-
     nl.
 
 % Similar show for mature audiences
-similarmatureshow(MEDIA_X, MEDIA_Y) :-
+similarMatureShow(MEDIA_X, MEDIA_Y) :-
     maturemedia(MEDIA_X),
     maturemedia(MEDIA_Y),
     type(MEDIA_X, TYPE),
@@ -90,13 +92,13 @@ similarmatureshow(MEDIA_X, MEDIA_Y) :-
     nl.
 
 % Director that direct media for mature audience
-maturedirector(MEDIA,DIRECTOR) :-
+matureDirector(MEDIA,DIRECTOR) :-
     maturemedia(MEDIA),
     director(MEDIA,DIRECTOR),
     nl.
 
 % Director that directed a media that this specific actor appear
-mediadirectorwithactor(DIRECTOR,ACTOR) :-
+mediaDirectorwithActor(DIRECTOR,ACTOR) :-
     director(MEDIA,DIRECTOR),
     actor(MEDIA, ACTOR, ROLE),
     nl,
@@ -104,7 +106,7 @@ mediadirectorwithactor(DIRECTOR,ACTOR) :-
     nl.
 
 % Co-star of an actor in this media. 
-costar(ACTOR_1,ACTOR_2) :-
+coStar(ACTOR_1,ACTOR_2) :-
     actor(MEDIA,ACTOR_1,ROLE_1),
     actor(MEDIA,ACTOR_2,ROLE_2),
     ACTOR_1 \= ACTOR_2,
@@ -113,25 +115,25 @@ costar(ACTOR_1,ACTOR_2) :-
     nl.
 
 % Actor in a classic media.
-actorinclassicmedia(ACTOR,MEDIA) :-
+actorinClassicMedia(ACTOR,MEDIA) :-
     isclassic(MEDIA),
     actor(MEDIA, ACTOR, ROLE),
     nl.
 
 % Specific medias with specific type that release in a specific year.
-maturetypemediainYear(MEDIA,TYPE,YEAR) :-
+matureTypeMediainYear(MEDIA,TYPE,YEAR) :-
     type(MEDIA,TYPE),
     maturemedia(MEDIA),
     releaseYear(MEDIA,YEAR),
     nl.
     
 % New movie/series that came out this year.
-newmedia(MEDIA) :-
+newMedia(MEDIA) :-
     releaseYear(MEDIA, YEAR),
     YEAR==2020.
 
 % Director that used to direct a classic media.
-classicdirector(DIRECTOR,MEDIA) :-
+classicDirector(DIRECTOR,MEDIA) :-
     isclassic(MEDIA),
     director(MEDIA,DIRECTOR),
     nl.
