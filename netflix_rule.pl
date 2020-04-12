@@ -46,16 +46,19 @@
 isclassic(MEDIA) :-
     releaseYear(MEDIA, YEAR),
     YEAR=<2000.
+    % print(year: YEAR).
 
 % Can kid watch this media?
 kidmedia(MEDIA) :-
     matage(MEDIA, AGE),
     AGE=<13.
+    % print(age: AGE).
 
 % A media for mature audience only
 maturemedia(MEDIA) :-
     matage(MEDIA, AGE),
     AGE>=18.
+    % print(age: AGE).
 
 % Is this media an anime?
 isanime(ANIME) :-
