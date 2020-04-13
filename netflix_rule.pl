@@ -51,19 +51,16 @@
 isClassic(MEDIA) :-
     releaseYear(MEDIA, YEAR),
     YEAR=<2000.
-    % print(year: YEAR).
 
 % Can kid watch this media?
 kidMedia(MEDIA) :-
     matage(MEDIA, AGE),
     AGE=<13.
-    % print(age: AGE).
 
 % A media for mature audience only
 matureMedia(MEDIA) :-
     matage(MEDIA, AGE),
     AGE>=18.
-    % print(age: AGE).
 
 % Is this media an anime?
 isAnime(ANIME) :-
@@ -72,27 +69,17 @@ isAnime(ANIME) :-
     isfrom(ANIME, LOCATION),
     LOCATION==japan.
 
-% Similar family show
-similarFamilyShow(MEDIA_X, MEDIA_Y) :-
-    kidMedia(MEDIA_X),
-    kidMedia(MEDIA_Y),
-    type(MEDIA_X, TYPE_A),
-    type(MEDIA_Y, TYPE_A),
-    MEDIA_X\=MEDIA_Y,
-    nl,
-    print(type: TYPE_A),
-    nl.
-
+% NOTE: Deleted similarFamilyShow and similarMatureShow because it can be converted into one rule.
 % Similar show for mature audiences
-similarMatureShow(MEDIA_X, MEDIA_Y) :-
-    matureMedia(MEDIA_X),
-    matureMedia(MEDIA_Y),
+similarShow(MEDIA_X, MEDIA_Y) :-
+    (matureMedia(MEDIA_X),  matureMedia(MEDIA_Y) ;  kidMedia(MEDIA_X),  kidMedia(MEDIA_Y)),
     type(MEDIA_X, TYPE),
     type(MEDIA_Y, TYPE),
     MEDIA_X\=MEDIA_Y,
     nl,
     print(type: TYPE),
     nl.
+
 
 % Director that direct media for mature audience
 matureDirector(MEDIA,DIRECTOR) :-
@@ -140,16 +127,6 @@ classicDirector(DIRECTOR,MEDIA) :-
     isClassic(MEDIA),
     director(MEDIA,DIRECTOR),
     nl.
-
-% % EXPERIMENTAL
-% % Similar Director that direct a mature and classic media.
-% similarclassicmaturedirector(DIRECTOR_X, DIRECTOR_Y) :-
-%     director(MEDIA_Y,DIRECTOR_Y),
-%     director(MEDIA_X,DIRECTOR_X),
-%     isclassic(MEDIA_Y),
-%     isclassic(MEDIA_X),
-%     nl.
-    
     
   
 
