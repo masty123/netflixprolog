@@ -71,8 +71,8 @@ isAnime(ANIME) :-
 
 % Similar family show
 similarFamilyShow(MEDIA_X, MEDIA_Y) :-
-    kidmedia(MEDIA_X),
-    kidmedia(MEDIA_Y),
+    kidMedia(MEDIA_X),
+    kidMedia(MEDIA_Y),
     type(MEDIA_X, TYPE_A),
     type(MEDIA_Y, TYPE_A),
     MEDIA_X\=MEDIA_Y,
@@ -82,8 +82,8 @@ similarFamilyShow(MEDIA_X, MEDIA_Y) :-
 
 % Similar show for mature audiences
 similarMatureShow(MEDIA_X, MEDIA_Y) :-
-    maturemedia(MEDIA_X),
-    maturemedia(MEDIA_Y),
+    matureMedia(MEDIA_X),
+    matureMedia(MEDIA_Y),
     type(MEDIA_X, TYPE),
     type(MEDIA_Y, TYPE),
     MEDIA_X\=MEDIA_Y,
@@ -93,7 +93,7 @@ similarMatureShow(MEDIA_X, MEDIA_Y) :-
 
 % Director that direct media for mature audience
 matureDirector(MEDIA,DIRECTOR) :-
-    maturemedia(MEDIA),
+    matureMedia(MEDIA),
     director(MEDIA,DIRECTOR),
     nl.
 
@@ -116,14 +116,14 @@ coStar(ACTOR_1,ACTOR_2) :-
 
 % Actor in a classic media.
 actorinClassicMedia(ACTOR,MEDIA) :-
-    isclassic(MEDIA),
+    isClassic(MEDIA),
     actor(MEDIA, ACTOR, ROLE),
     nl.
 
 % Specific medias with specific type that release in a specific year.
 matureTypeMediainYear(MEDIA,TYPE,YEAR) :-
     type(MEDIA,TYPE),
-    maturemedia(MEDIA),
+    matureMedia(MEDIA),
     releaseYear(MEDIA,YEAR),
     nl.
     
@@ -134,7 +134,7 @@ newMedia(MEDIA) :-
 
 % Director that used to direct a classic media.
 classicDirector(DIRECTOR,MEDIA) :-
-    isclassic(MEDIA),
+    isClassic(MEDIA),
     director(MEDIA,DIRECTOR),
     nl.
 
