@@ -52,6 +52,11 @@ isClassic(MEDIA) :-
     releaseYear(MEDIA, YEAR),
     YEAR=<2000.
 
+% New movie/series that came out this year.
+newMedia(MEDIA) :-
+    releaseYear(MEDIA, YEAR),
+    YEAR==2020.
+
 % ISSUE 1: Use constant for age instant of variable.
 % COMPLETED: We cannot only use constant on matureMedia rule because kidMedia has some media that 
 % age restrict is less than 13.
@@ -131,11 +136,6 @@ matureTypeMediainYear(MEDIA,TYPE,YEAR) :-
     releaseYear(MEDIA,YEAR),
     nl.
     
-% New movie/series that came out this year.
-newMedia(MEDIA) :-
-    releaseYear(MEDIA, YEAR),
-    YEAR==2020.
-
 % Director that used to direct a classic media.
 classicDirector(DIRECTOR,MEDIA) :-
     isClassic(MEDIA),
