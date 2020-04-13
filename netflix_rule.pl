@@ -45,7 +45,7 @@
 % Director that used to direct a classic media.
 
 
-% rules:_converted_into_code
+% rules:questions_converted_into_code
 
 % Is this media a classic?
 isClassic(MEDIA) :-
