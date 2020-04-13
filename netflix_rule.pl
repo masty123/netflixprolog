@@ -2,6 +2,9 @@
 
 % for ignore warning
 :- dynamic 
+    kidmedia/1,
+    maturemedia/1,
+    isclassic/1,
     mateage/2, 
     releaseYear/1, 
     matage/1, 
