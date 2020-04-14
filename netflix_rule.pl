@@ -47,6 +47,9 @@
 
 % rules:questions_converted_into_code
 
+% ISSUE 1: Use constant for age instant of variable.
+% COMPLETED: We can only use constant on some cases, there are some cases that cannot be changed like isClassic(X), kidMedia, and teenMedia.
+
 % Is this media a classic?
 isClassic(MEDIA) :-
     releaseYear(MEDIA, YEAR),
@@ -54,39 +57,27 @@ isClassic(MEDIA) :-
 
 % New movie/series that came out this year.
 newMedia(MEDIA) :-
-    releaseYear(MEDIA, YEAR),
-    YEAR==2020.
-
-% ISSUE 1: Use constant for age instant of variable.
-% COMPLETED: We can only use constant on matureMedia rule because kidMedia has some media that 
-% age restrict is less than 13.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                                           %
-% Can kid watch this media?                %
-kidMedia(MEDIA) :-                         %
-    matage(MEDIA, AGE),                    %
-    AGE =< 13.                             %
-                                           %
-                                           %
-                                           %
-% A media for mature audience only         %
-matureMedia(MEDIA) :-                      %
-    matage(MEDIA, 18).                     %
-                                           %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+    releaseYear(MEDIA, 2020).
+                                     
+% Can kid watch this media?                
+kidMedia(MEDIA) :-                         
+    matage(MEDIA, AGE),                    
+    AGE =< 13.                             
+                                                                                                                             
+% A media for mature audience only         
+matureMedia(MEDIA) :-                      
+    matage(MEDIA, 18).                     
+                                           
 % We've added this rule to handle media that have age between 13 - 18.
-teenMedia(MEDIA) :-                      %
+teenMedia(MEDIA) :-                      
     matage(MEDIA, AGE),
     AGE > 13,
     AGE < 18.  
 
 % Is this media an anime?
 isAnime(ANIME) :-
-    type(ANIME, TYPE),
-    TYPE==animation,
-    isfrom(ANIME, LOCATION),
-    LOCATION==japan.
+    type(ANIME, animation),
+    isfrom(ANIME, japan).
 
 % ISSUE 2: Convert similarFamilyShow and similarMatureShow into one rule.
 % COMPLETED: Deleted similarFamilyShow and similarMatureShow because it can be converted into one rule.
@@ -110,7 +101,6 @@ similarShow(MEDIA_X, MEDIA_Y) :-                                                
     nl.                                                                                                 %
                                                                                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 % Director that direct media for mature audience
 matureDirector(MEDIA,DIRECTOR) :-
