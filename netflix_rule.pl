@@ -58,7 +58,7 @@ newMedia(MEDIA) :-
     YEAR==2020.
 
 % ISSUE 1: Use constant for age instant of variable.
-% COMPLETED: We cannot only use constant on matureMedia rule because kidMedia has some media that 
+% COMPLETED: We can only use constant on matureMedia rule because kidMedia has some media that 
 % age restrict is less than 13.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                                            %
@@ -75,6 +75,12 @@ matureMedia(MEDIA) :-                      %
                                            %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% We've added this rule to handle media that have age between 13 - 18.
+teenMedia(MEDIA) :-                      %
+    matage(MEDIA, AGE),
+    AGE > 13,
+    AGE < 18.  
+
 % Is this media an anime?
 isAnime(ANIME) :-
     type(ANIME, TYPE),
@@ -89,12 +95,18 @@ isAnime(ANIME) :-
 % Similar show for with age restrict checking.                                                          %
 similarShow(MEDIA_X, MEDIA_Y) :-                                                                        %
     % Fixed at this below column. use OR instead of 2 rules                                             %
-    (matureMedia(MEDIA_X),  matureMedia(MEDIA_Y) ;  kidMedia(MEDIA_X),  kidMedia(MEDIA_Y)),             %
+    (   matureMedia(MEDIA_X),                                                                           %
+        matureMedia(MEDIA_Y)                                                                            %
+    ;   kidMedia(MEDIA_X),                                                                              %
+        kidMedia(MEDIA_Y)                                                                               %
+    ;   teenMedia(MEDIA_X),                                                                             %
+        teenMedia(MEDIA_Y)                                                                              %
+    ),                                                                                                  %
     type(MEDIA_X, TYPE),                                                                                %
     type(MEDIA_Y, TYPE),                                                                                %
     MEDIA_X\=MEDIA_Y,                                                                                   %
     nl,                                                                                                 %                
-    print(type: TYPE),                                                                                  %
+    print(type:TYPE),                                                                                   %
     nl.                                                                                                 %
                                                                                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

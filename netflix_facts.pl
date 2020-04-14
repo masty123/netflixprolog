@@ -14,6 +14,7 @@ media(uncut_Gems).
 media(the_thing).
 media(back_to_the_future).
 media(ready_player_One).
+media(goosebump).
 
 % series
 media(ex_Education).
@@ -49,6 +50,7 @@ releaseYear(ben10, 2005).
 releaseYear(jojo_bizarre_adventure, 2012).
 releaseYear(tiger_king, 2020).
 releaseYear(altered_carbon, 2018).
+releaseYear(goosebump, 2015).
 
 matage(deadpool, 18).
 matage(jumanji, 13).
@@ -71,6 +73,7 @@ matage(ben10, 6).
 matage(jojo_bizarre_adventure, 18).
 matage(tiger_king, 18).
 matage(altered_carbon, 18).
+matage(goosebump, 16).
 
 type(deadpool, action).
 type(deadpool, comedy).
@@ -94,6 +97,9 @@ type(prison_break, crime).
 type(prison_break, drama).
 type(stranger_things, thriller).
 type(stranger_things, teen).
+type(goosebump, thriller).
+type(goosebump, teen).
+type(goosebump, fantasy).
 type(the_Witcher, fantasy).
 type(the_Witcher, drama).
 type(pokemon_sun_and_moon, animation).
@@ -135,6 +141,7 @@ isfrom(ben10, usa).
 isfrom(jojo_bizarre_adventure, japan).
 isfrom(tiger_king, usa).
 isfrom(altered_carbon, usa).
+isfrom(goosebump, usa).
 
 director(frozen, jennifer_lee).
 director(marriage_story, noah_baumbach).
@@ -157,6 +164,7 @@ director(ben10, matt_youngberg).
 director(jojo_bizarre_adventure, naokatsu_tsuda).
 director(tiger_king, eric_goode).
 director(altered_carbon, miguel_sapochnik).
+director(goosebump, rob_letterman).
 
 
 actor(frozen,idina_menzel, elsa).
@@ -202,7 +210,7 @@ actor(ben10, tara_strong, ben_tennyson).
 actor(ben10, megan_moore, gwen_tennyson).
 actor(ben10, paul_eiding, max_tennyson).
 actor(jojo_bizarre_adventure, jotaro_kujo, daisuke_ono).
-actor(jojo_bizarre_adventure, joseph_joestar, unsho_ishizuka).
+actor(jojo_bizarre_adventure, joseph_joestar, unszho_ishizuka).
 actor(jojo_bizarre_adventure, giorno_giovanna, kensho_ono).
 actor(jojo_bizarre_adventure, fuminori_komatsu, jean_pierre_polnareff).
 actor(tiger_king, carole_baskin, carole_baskin).
@@ -211,6 +219,10 @@ actor(tiger_king, eric_goode, eric_goode).
 actor(altered_carbon, joel_kinnaman, takeshi_kovacs).
 actor(altered_carbon, martha_higareda, kristen_ortega).
 actor(altered_carbon, chris_conner, poe).
+actor(goosebump,jack_black, stine).
+actor(goosebump,dylan_minnette, zach).
+actor(goosebump,odeya_rush, hannah).
+
 
 
 
