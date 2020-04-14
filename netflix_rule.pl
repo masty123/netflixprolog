@@ -1,6 +1,6 @@
 :- load_files(netflix_facts,[]).
 
-% for ignore warning
+% for ignore warnings.
 :- dynamic 
     kidmedia/1,
     maturemedia/1,
